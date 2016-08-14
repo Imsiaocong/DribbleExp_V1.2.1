@@ -1,4 +1,9 @@
-# DribbleExp-V1.1.0
+# DribbleExp-V1.2.1(Current Version)
+
+UPDATELOG:
+V1.1.0
+
+Basic Model Build Up
 
 This is just a personal App for merely practice purpose.
 
