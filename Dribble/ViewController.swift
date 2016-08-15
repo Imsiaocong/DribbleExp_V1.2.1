@@ -27,17 +27,22 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var replica = UIImageView()
     var blur: UIVisualEffectView!
     var blur2: UIVisualEffectView!
+    //var pageControl: GuttlerPageControl!
     let customAnimation = CustomTransitionAnimation()
     let imgArray = ["0","1","2","3","4"]
     let ttlArray = ["Taylor Swift","Albums","Concerts","Website","Blog"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //pageControl = GuttlerPageControl(center: view.center, pages: 5)
+        //pageControl.bindScrollView = collectionView
+        //view.addSubview(pageControl)
         //self.performSegueWithIdentifier("backToWelcomeVC", sender: nil)
         // Do any additional setup after loading the view, typically from a nib.
         collectionView.dataSource = self
         collectionView.delegate   = self
         collectionView.backgroundColor = UIColor.clearColor()
+        //collectionView.pagingEnabled = true
         //self.navigationController?.navigationBarHidden = true
         let ges = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.didPress))
             ges.delegate = self
@@ -108,18 +113,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
  */
-    /*
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        print("\(scrollView.contentOffset.x) y:\(scrollView.contentOffset.y)")
-        
-        let point = CGPoint(x: 340, y: 0)
-        if scrollView.contentOffset.x > 170 {
-            UIView.animateWithDuration(0.1, animations: {
-                scrollView.setContentOffset(point, animated: true)
-            })
-        }
-    }
-    */
+    
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         if operation == UINavigationControllerOperation.Push {
             return CustomTransitionAnimation()

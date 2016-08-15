@@ -11,6 +11,8 @@ import UIKit
 extension ViewController{
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
+        //pageControl.scrollWithScrollView(collectionView)
+        
         if scrollView.contentOffset.x > 0 && scrollView.contentOffset.x <= 100{
             self.backgroundPic.image = UIImage(named: "0")
         }
