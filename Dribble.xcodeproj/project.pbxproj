@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		010373A11D58D28900C75D1C /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010373A01D58D28900C75D1C /* ViewControllerExtension.swift */; };
 		011B0E681D412DEE00217424 /* CustomBackwardTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011B0E671D412DEE00217424 /* CustomBackwardTransition.swift */; };
+		012F01631D63470300AB00D7 /* BubbleTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012F01621D63470300AB00D7 /* BubbleTransition.swift */; };
 		013363151D3B7B3400346D8F /* TheSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013363141D3B7B3400346D8F /* TheSecondView.swift */; };
 		013CFEF41D6227F900990A78 /* BubblesLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CFEF01D6227F900990A78 /* BubblesLayer.swift */; };
 		013CFEF51D6227F900990A78 /* GuttlerPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CFEF11D6227F900990A78 /* GuttlerPageControl.swift */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		010373A01D58D28900C75D1C /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		011B0E671D412DEE00217424 /* CustomBackwardTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBackwardTransition.swift; sourceTree = "<group>"; };
+		012F01621D63470300AB00D7 /* BubbleTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleTransition.swift; path = Source/BubbleTransition.swift; sourceTree = "<group>"; };
 		013363141D3B7B3400346D8F /* TheSecondView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheSecondView.swift; sourceTree = "<group>"; };
 		013CFEF01D6227F900990A78 /* BubblesLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubblesLayer.swift; sourceTree = "<group>"; };
 		013CFEF11D6227F900990A78 /* GuttlerPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuttlerPageControl.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				01BBCE331D60C24700807220 /* Source */,
 				01FF9CA21D490760002A9ECE /* CLTypingLabel.swift */,
+				012F01621D63470300AB00D7 /* BubbleTransition.swift */,
 				01BBCE311D60B7BA00807220 /* CustomTransitioning.swift */,
 				01C6375D1D2940E70044DD89 /* CustomTransitionAnimation.swift */,
 				011B0E671D412DEE00217424 /* CustomBackwardTransition.swift */,
@@ -447,6 +450,7 @@
 				01BBCE4F1D60C24700807220 /* PaperOnboarding.swift in Sources */,
 				01BBCE4E1D60C24700807220 /* PageView.swift in Sources */,
 				01C637581D293FC40044DD89 /* CollectionViewCell.swift in Sources */,
+				012F01631D63470300AB00D7 /* BubbleTransition.swift in Sources */,
 				01FF9CA31D490760002A9ECE /* CLTypingLabel.swift in Sources */,
 				013363151D3B7B3400346D8F /* TheSecondView.swift in Sources */,
 				019A4B5E1D3BCC700073277D /* SwiftyJSON.swift in Sources */,
