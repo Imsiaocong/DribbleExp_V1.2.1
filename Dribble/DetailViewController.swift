@@ -141,3 +141,9 @@ class DetailViewController: UIViewController, UIScrollViewDelegate, UINavigation
     }
     
 }
+
+extension DetailViewController {
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return .Portrait
+    }
+}

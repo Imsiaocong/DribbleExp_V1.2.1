@@ -81,3 +81,9 @@ class WelcomeViewController: UIViewController, UIViewControllerTransitioningDele
     }
     */
 }
+
+extension WelcomeViewController {
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return .Portrait
+    }
+}

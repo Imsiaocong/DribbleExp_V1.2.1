@@ -38,4 +38,8 @@ extension ViewController{
             print("No!")
         }
     }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return .Portrait
+    }
 }
