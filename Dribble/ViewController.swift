@@ -13,7 +13,7 @@ enum didApear {
     case no
 }
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate{
     
     @IBOutlet weak var weatherImg: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -27,16 +27,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var replica = UIImageView()
     var blur: UIVisualEffectView!
     var blur2: UIVisualEffectView!
-    //var pageControl: GuttlerPageControl!
+    var pageControl: GuttlerPageControl!
+    let cellSpacing:CGFloat = 100.0
     let customAnimation = CustomTransitionAnimation()
     let imgArray = ["0","1","2","3","4"]
     let ttlArray = ["Taylor Swift","Albums","Concerts","Website","Blog"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //pageControl = GuttlerPageControl(center: view.center, pages: 5)
-        //pageControl.bindScrollView = collectionView
-        //view.addSubview(pageControl)
+        view.center.y = 600
+        pageControl = GuttlerPageControl(center: self.view.center, pages: 5)
+        pageControl.bindScrollView = collectionView
+        view.addSubview(pageControl)
         //self.performSegueWithIdentifier("backToWelcomeVC", sender: nil)
         // Do any additional setup after loading the view, typically from a nib.
         collectionView.dataSource = self

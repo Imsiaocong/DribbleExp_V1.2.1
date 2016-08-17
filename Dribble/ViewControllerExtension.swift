@@ -8,24 +8,25 @@
 
 import UIKit
 
-extension ViewController{
+extension ViewController: UICollectionViewDelegateFlowLayout{
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
+        //print(scrollView.contentOffset.x)
         //pageControl.scrollWithScrollView(collectionView)
         
-        if scrollView.contentOffset.x > 0 && scrollView.contentOffset.x <= 100{
+        if scrollView.contentOffset.x > 0 && scrollView.contentOffset.x <= 180{
             self.backgroundPic.image = UIImage(named: "0")
         }
-        if scrollView.contentOffset.x > 100 && scrollView.contentOffset.x <= 400{
+        if scrollView.contentOffset.x > 180 && scrollView.contentOffset.x <= 560{
             self.backgroundPic.image = UIImage(named: "1")
         }
-        if scrollView.contentOffset.x > 400 && scrollView.contentOffset.x <= 670{
+        if scrollView.contentOffset.x > 560 && scrollView.contentOffset.x <= 935{
             self.backgroundPic.image = UIImage(named: "2")
         }
-        if scrollView.contentOffset.x > 670 && scrollView.contentOffset.x <= 850{
+        if scrollView.contentOffset.x > 935 && scrollView.contentOffset.x <= 1310{
             self.backgroundPic.image = UIImage(named: "3")
         }
-        if scrollView.contentOffset.x > 850 && scrollView.contentOffset.x <= 1062{
+        if scrollView.contentOffset.x > 1310 && scrollView.contentOffset.x <= 2000{
             self.backgroundPic.image = UIImage(named: "4")
         }
     }
@@ -42,4 +43,5 @@ extension ViewController{
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return .Portrait
     }
+    
 }
