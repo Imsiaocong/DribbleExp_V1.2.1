@@ -18,7 +18,7 @@ class WelcomeViewController: UIViewController, UIViewControllerTransitioningDele
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
-        self.transitionButton.layer.cornerRadius = 23
+        self.transitionButton.layer.cornerRadius = 43
         
         //onboarding = PaperOnboarding(itemsCount: 3)
         //onboarding.dataSource = self

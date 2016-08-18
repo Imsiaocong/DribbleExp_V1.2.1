@@ -13,7 +13,7 @@ enum didApear {
     case no
 }
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate{
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var weatherImg: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!

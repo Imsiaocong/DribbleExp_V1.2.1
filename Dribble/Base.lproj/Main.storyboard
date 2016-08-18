@@ -19,11 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZkO-qz-aMr">
-                                <rect key="frame" x="277" y="517" width="46" height="46"/>
+                                <rect key="frame" x="258" y="496" width="84" height="84"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="eOl-fP-Dea"/>
-                                    <constraint firstAttribute="width" constant="46" id="kvZ-o0-jro"/>
+                                    <constraint firstAttribute="height" constant="84" id="eOl-fP-Dea"/>
+                                    <constraint firstAttribute="width" constant="84" id="kvZ-o0-jro"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="54"/>
                                 <state key="normal" title="+">
@@ -37,7 +37,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZkO-qz-aMr" firstAttribute="centerX" secondItem="kx1-aN-6mE" secondAttribute="centerX" id="CQX-OK-vmJ"/>
-                            <constraint firstItem="ZkO-qz-aMr" firstAttribute="top" secondItem="okG-xF-wYR" secondAttribute="bottom" constant="497" id="prI-DP-rp2"/>
+                            <constraint firstItem="ZkO-qz-aMr" firstAttribute="top" secondItem="okG-xF-wYR" secondAttribute="bottom" constant="476" id="prI-DP-rp2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="M7i-s7-G3I"/>

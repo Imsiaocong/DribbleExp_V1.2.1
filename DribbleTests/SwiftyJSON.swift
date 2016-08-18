@@ -41,7 +41,7 @@ JSON's type definitions.
 
 See http://www.json.org
 */
-public enum Type :Int{
+public enum Types :Int{
 
     case Number
     case String
@@ -132,7 +132,7 @@ public struct JSON {
     private var rawNumber: NSNumber = 0
     private var rawNull: NSNull = NSNull()
     /// Private type
-    private var _type: Type = .Null
+    private var _type: Types = .Null
     /// prviate error
     private var _error: NSError? = nil
 
@@ -183,7 +183,7 @@ public struct JSON {
     }
 
     /// json type
-    public var type: Type { get { return _type } }
+    public var type: Types { get { return _type } }
 
     /// Error in JSON
     public var error: NSError? { get { return self._error } }
@@ -287,7 +287,7 @@ public struct JSONIndex: ForwardIndexType, _Incrementable, Equatable, Comparable
     let arrayIndex: Int?
     let dictionaryIndex: DictionaryIndex<String, AnyObject>?
 
-    let type: Type
+    let type: Types
 
     init(){
         self.arrayIndex = nil
@@ -378,7 +378,7 @@ public struct JSONGenerator : GeneratorType {
 
     public typealias Element = (String, JSON)
 
-    private let type: Type
+    private let type: Types
     private var dictionayGenerate: DictionaryGenerator<String, AnyObject>?
     private var arrayGenerate: IndexingGenerator<[AnyObject]>?
     private var arrayIndex: Int = 0

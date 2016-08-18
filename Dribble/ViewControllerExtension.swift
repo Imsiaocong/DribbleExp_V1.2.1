@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ViewController: UICollectionViewDelegateFlowLayout{
+extension ViewController{
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
         //print(scrollView.contentOffset.x)
@@ -42,6 +42,13 @@ extension ViewController: UICollectionViewDelegateFlowLayout{
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return .Portrait
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        switch Device.version(){
+        case .iPhone6S: return 110
+        default: return 110
+        }
     }
     
 }

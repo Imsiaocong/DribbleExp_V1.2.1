@@ -38,6 +38,11 @@
 		01C637581D293FC40044DD89 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C637571D293FC40044DD89 /* CollectionViewCell.swift */; };
 		01C6375C1D2940C60044DD89 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C6375B1D2940C60044DD89 /* DetailViewController.swift */; };
 		01C6375E1D2940E70044DD89 /* CustomTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C6375D1D2940E70044DD89 /* CustomTransitionAnimation.swift */; };
+		01E2FE5C1D65E3F300C7FC4D /* device.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E2FE571D65E3F300C7FC4D /* device.png */; };
+		01E2FE5D1D65E3F300C7FC4D /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E2FE581D65E3F300C7FC4D /* Device.swift */; };
+		01E2FE5E1D65E3F300C7FC4D /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E2FE591D65E3F300C7FC4D /* Size.swift */; };
+		01E2FE5F1D65E3F300C7FC4D /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E2FE5A1D65E3F300C7FC4D /* Type.swift */; };
+		01E2FE601D65E3F300C7FC4D /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E2FE5B1D65E3F300C7FC4D /* Version.swift */; };
 		01FF9CA31D490760002A9ECE /* CLTypingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FF9CA21D490760002A9ECE /* CLTypingLabel.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +101,11 @@
 		01C637571D293FC40044DD89 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		01C6375B1D2940C60044DD89 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		01C6375D1D2940E70044DD89 /* CustomTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTransitionAnimation.swift; path = ../Dribble/CustomTransitionAnimation.swift; sourceTree = "<group>"; };
+		01E2FE571D65E3F300C7FC4D /* device.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = device.png; sourceTree = "<group>"; };
+		01E2FE581D65E3F300C7FC4D /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		01E2FE591D65E3F300C7FC4D /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		01E2FE5A1D65E3F300C7FC4D /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		01E2FE5B1D65E3F300C7FC4D /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		01FF9CA21D490760002A9ECE /* CLTypingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLTypingLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,6 +172,7 @@
 		01BBCE331D60C24700807220 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				01E2FE541D65E3DD00C7FC4D /* Devices */,
 				013CFEEF1D6227C000990A78 /* GuttlerPageControl */,
 				01BBCE341D60C24700807220 /* FillAnimatinView */,
 				01BBCE361D60C24700807220 /* GestureControl */,
@@ -298,6 +309,34 @@
 			path = DribbleUITests;
 			sourceTree = "<group>";
 		};
+		01E2FE541D65E3DD00C7FC4D /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				01E2FE551D65E3F300C7FC4D /* Source */,
+			);
+			name = Devices;
+			sourceTree = "<group>";
+		};
+		01E2FE551D65E3F300C7FC4D /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				01E2FE561D65E3F300C7FC4D /* Asset */,
+				01E2FE581D65E3F300C7FC4D /* Device.swift */,
+				01E2FE591D65E3F300C7FC4D /* Size.swift */,
+				01E2FE5A1D65E3F300C7FC4D /* Type.swift */,
+				01E2FE5B1D65E3F300C7FC4D /* Version.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		01E2FE561D65E3F300C7FC4D /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				01E2FE571D65E3F300C7FC4D /* device.png */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -406,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01C637341D293B460044DD89 /* LaunchScreen.storyboard in Resources */,
+				01E2FE5C1D65E3F300C7FC4D /* device.png in Resources */,
 				01C637311D293B460044DD89 /* Assets.xcassets in Resources */,
 				01C6372F1D293B460044DD89 /* Main.storyboard in Resources */,
 			);
@@ -437,12 +477,14 @@
 				01C6372C1D293B460044DD89 /* ViewController.swift in Sources */,
 				013CFEF41D6227F900990A78 /* BubblesLayer.swift in Sources */,
 				01BBCE4D1D60C24700807220 /* PageContainer.swift in Sources */,
+				01E2FE5F1D65E3F300C7FC4D /* Type.swift in Sources */,
 				01BBCE461D60C24700807220 /* FillAnimationView.swift in Sources */,
 				01C6372A1D293B460044DD89 /* AppDelegate.swift in Sources */,
 				01BBCE481D60C24700807220 /* Configuring.swift in Sources */,
 				01BBCE301D60B6E500807220 /* WelcomeViewController.swift in Sources */,
 				01C6375E1D2940E70044DD89 /* CustomTransitionAnimation.swift in Sources */,
 				01BBCE491D60C24700807220 /* ConstraintsHalper.swift in Sources */,
+				01E2FE5E1D65E3F300C7FC4D /* Size.swift in Sources */,
 				01BBCE321D60B7BA00807220 /* CustomTransitioning.swift in Sources */,
 				011B0E681D412DEE00217424 /* CustomBackwardTransition.swift in Sources */,
 				01BBCE471D60C24700807220 /* GestureControl.swift in Sources */,
@@ -451,11 +493,13 @@
 				01BBCE4E1D60C24700807220 /* PageView.swift in Sources */,
 				01C637581D293FC40044DD89 /* CollectionViewCell.swift in Sources */,
 				012F01631D63470300AB00D7 /* BubbleTransition.swift in Sources */,
+				01E2FE5D1D65E3F300C7FC4D /* Device.swift in Sources */,
 				01FF9CA31D490760002A9ECE /* CLTypingLabel.swift in Sources */,
 				013363151D3B7B3400346D8F /* TheSecondView.swift in Sources */,
 				019A4B5E1D3BCC700073277D /* SwiftyJSON.swift in Sources */,
 				01BBCE4C1D60C24700807220 /* PageViewItem.swift in Sources */,
 				010373A11D58D28900C75D1C /* ViewControllerExtension.swift in Sources */,
+				01E2FE601D65E3F300C7FC4D /* Version.swift in Sources */,
 				013CFEF61D6227F900990A78 /* IndicatorLayer.swift in Sources */,
 				013CFEF71D6227F900990A78 /* RandomColor.swift in Sources */,
 				01C6375C1D2940C60044DD89 /* DetailViewController.swift in Sources */,
