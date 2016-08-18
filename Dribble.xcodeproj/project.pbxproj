@@ -84,7 +84,7 @@
 		01BBCE411D60C24700807220 /* PageViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewItem.swift; sourceTree = "<group>"; };
 		01BBCE431D60C24700807220 /* PageContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContainer.swift; sourceTree = "<group>"; };
 		01BBCE441D60C24700807220 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
-		01BBCE451D60C24700807220 /* PaperOnboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaperOnboarding.swift; sourceTree = "<group>"; };
+		01BBCE451D60C24700807220 /* PaperOnboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaperOnboarding.swift; path = Source/PaperOnboarding.swift; sourceTree = "<group>"; };
 		01C637261D293B460044DD89 /* Dribble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dribble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C637291D293B460044DD89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01C6372B1D293B460044DD89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +159,7 @@
 			children = (
 				01BBCE331D60C24700807220 /* Source */,
 				01FF9CA21D490760002A9ECE /* CLTypingLabel.swift */,
+				01BBCE451D60C24700807220 /* PaperOnboarding.swift */,
 				012F01621D63470300AB00D7 /* BubbleTransition.swift */,
 				01BBCE311D60B7BA00807220 /* CustomTransitioning.swift */,
 				01C6375D1D2940E70044DD89 /* CustomTransitionAnimation.swift */,
@@ -179,7 +180,6 @@
 				01BBCE381D60C24700807220 /* Helpers */,
 				01BBCE3B1D60C24700807220 /* OnboardingContantView */,
 				01BBCE3F1D60C24700807220 /* PageView */,
-				01BBCE451D60C24700807220 /* PaperOnboarding.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
