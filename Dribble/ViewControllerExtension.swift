@@ -47,6 +47,7 @@ extension ViewController{
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
         switch Device.version(){
         case .iPhone6S: return 110
+        case .iPhone6SPlus: return 150
         default: return 110
         }
     }
