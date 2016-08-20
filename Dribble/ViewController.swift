@@ -27,7 +27,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var replica = UIImageView()
     var blur: UIVisualEffectView!
     var blur2: UIVisualEffectView!
-    var pageControl: GuttlerPageControl!
+    //var pageControl: GuttlerPageControl!
     let cellSpacing:CGFloat = 100.0
     let customAnimation = CustomTransitionAnimation()
     let imgArray = ["0","1","2","3","4"]
@@ -37,10 +37,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
         view.center.y = 600
         self.collectionView.frame.size.width = self.view.frame.size.width * 5
-        pageControl = GuttlerPageControl(center: self.view.center, pages: 5)
-        pageControl.bindScrollView = collectionView
-        print(self.collectionView.frame.size.width)
-        view.addSubview(pageControl)
+        //pageControl = GuttlerPageControl(center: self.view.center, pages: 5)
+        //pageControl.bindScrollView = collectionView
+        //print(self.collectionView.frame.size.width)
+        //view.addSubview(pageControl)
         
         //self.performSegueWithIdentifier("backToWelcomeVC", sender: nil)
         // Do any additional setup after loading the view, typically from a nib.

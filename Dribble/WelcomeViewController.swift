@@ -14,6 +14,7 @@ class WelcomeViewController: UIViewController, UIViewControllerTransitioningDele
     let transition = BubbleTransition()
     let pageNumberCount = 3
     
+    var pageControl: GuttlerPageControl!
     private var scrollView: UIScrollView!
     @IBOutlet weak var transitionButton: UIButton!
     //@IBOutlet weak var onboarding: PaperOnboarding!
@@ -21,6 +22,7 @@ class WelcomeViewController: UIViewController, UIViewControllerTransitioningDele
     override func viewDidLoad() {
         super.viewDidLoad()
         let frame = self.view.bounds
+        
         self.view.backgroundColor = UIColor.whiteColor()
         self.transitionButton.layer.cornerRadius = 43
         self.transitionButton.alpha = 0
@@ -38,12 +40,17 @@ class WelcomeViewController: UIViewController, UIViewControllerTransitioningDele
         scrollView.delegate = self
         
         for index in 0..<pageNumberCount {
-            let imageView = UIImageView(image: UIImage(named: "\(index + 1)"))
+            let imageView = UIImageView(image: UIImage(named: "W\(index + 1)"))
             imageView.frame = CGRect(x: frame.size.width * CGFloat(index), y: 0, width: frame.size.width, height: frame.size.height)
             scrollView.addSubview(imageView)
         }
         
         self.view.insertSubview(scrollView, atIndex: 0)
+        
+        pageControl = GuttlerPageControl(center: CGPoint(x: view.center.x, y: view.center.y+300), pages:pageNumberCount)
+        pageControl.bindScrollView = scrollView
+        view.addSubview(pageControl)
+
         
         //onboarding = PaperOnboarding(itemsCount: 3)
         //onboarding.dataSource = self
@@ -113,6 +120,9 @@ class WelcomeViewController: UIViewController, UIViewControllerTransitioningDele
 
 extension WelcomeViewController {
     func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        self.pageControl.scrollWithScrollView(scrollView)
+        
         let offset = scrollView.contentOffset
         let currentPage = Int(offset.x / view.bounds.width)
         
