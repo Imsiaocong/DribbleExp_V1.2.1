@@ -36,9 +36,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         view.center.y = 600
+        self.collectionView.frame.size.width = self.view.frame.size.width * 5
         pageControl = GuttlerPageControl(center: self.view.center, pages: 5)
         pageControl.bindScrollView = collectionView
+        print(self.collectionView.frame.size.width)
         view.addSubview(pageControl)
+        
         //self.performSegueWithIdentifier("backToWelcomeVC", sender: nil)
         // Do any additional setup after loading the view, typically from a nib.
         collectionView.dataSource = self

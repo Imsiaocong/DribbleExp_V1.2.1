@@ -8,18 +8,42 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController, UIViewControllerTransitioningDelegate {
+class WelcomeViewController: UIViewController, UIViewControllerTransitioningDelegate, UIScrollViewDelegate {
     
     //var swipe: UISwipeGestureRecognizer!
     let transition = BubbleTransition()
+    let pageNumberCount = 3
+    
+    private var scrollView: UIScrollView!
     @IBOutlet weak var transitionButton: UIButton!
     //@IBOutlet weak var onboarding: PaperOnboarding!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Device.version())
+        let frame = self.view.bounds
         self.view.backgroundColor = UIColor.whiteColor()
         self.transitionButton.layer.cornerRadius = 43
+        self.transitionButton.alpha = 0
+        
+        scrollView = UIScrollView(frame: frame)
+        scrollView.pagingEnabled = true
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.scrollsToTop = false
+        scrollView.bounces = false
+        scrollView.contentOffset = CGPointZero
+        
+        scrollView.contentSize = CGSize(width: frame.size.width * CGFloat(pageNumberCount), height: frame.size.height)
+        
+        scrollView.delegate = self
+        
+        for index in 0..<pageNumberCount {
+            let imageView = UIImageView(image: UIImage(named: "\(index + 1)"))
+            imageView.frame = CGRect(x: frame.size.width * CGFloat(index), y: 0, width: frame.size.width, height: frame.size.height)
+            scrollView.addSubview(imageView)
+        }
+        
+        self.view.insertSubview(scrollView, atIndex: 0)
         
         //onboarding = PaperOnboarding(itemsCount: 3)
         //onboarding.dataSource = self
@@ -63,6 +87,10 @@ class WelcomeViewController: UIViewController, UIViewControllerTransitioningDele
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return .Portrait
+    }
     /*
     func swiped() {
         print("Swiped")
@@ -84,7 +112,18 @@ class WelcomeViewController: UIViewController, UIViewControllerTransitioningDele
 }
 
 extension WelcomeViewController {
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return .Portrait
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset
+        let currentPage = Int(offset.x / view.bounds.width)
+        
+        if currentPage == 2 {
+            UIView.animateWithDuration(0.5, animations: { 
+                self.transitionButton.alpha = 1
+                }, completion: nil)
+        } else {
+            UIView.animateWithDuration(0.2, animations: { 
+                self.transitionButton.alpha = 0
+                }, completion: nil)
+        }
     }
 }
