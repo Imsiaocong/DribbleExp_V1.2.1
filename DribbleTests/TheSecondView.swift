@@ -51,7 +51,7 @@ class ExtraViewController: UIViewController {
         for index in 0..<count {
             let imageView = createOneImageView(index)
             imageView.image = UIImage(named: "\(index)")
-            self.view.insertSubview(imageView, atIndex: 1)
+            self.view.insertSubview(imageView, atIndex: 0)
             self.imageViews.append(imageView)
         }
     }

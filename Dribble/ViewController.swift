@@ -190,10 +190,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             
             
             if DestinationView.label.text! == "Taylor Swift" {
-                //DestinationView.view.addSubview(snapshotView)
+                
                DestinationView.view.backgroundColor = UIColor.clearColor()
                DestinationView.scrollView.addSubview(DestinationView.detailView)
-            let cus = TheSecondView(desitination: DestinationView, label: DestinationView.label, extra: DestinationView.extra)
+                let cus = TheSecondView(desitination: DestinationView, label: DestinationView.label, extra: DestinationView.extra)
                 cus.customizedView()
                 
             }else if DestinationView.label.text == "Albums" {

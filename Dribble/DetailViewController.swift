@@ -46,8 +46,9 @@ class DetailViewController: UIViewController, UIScrollViewDelegate, UINavigation
         self.scrollView.addSubview(detailLabel)
         self.detailLabel.font = UIFont(name: "STHeitiTC-Light", size: 35)
         self.scrollView.delegate = self
-        self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: 1500)
+        self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: 2*self.view.frame.size.height)
         self.detailView.userInteractionEnabled = true
+        self.scrollView.bounces = false
         //self.drawRact()
         //WeatherInfo().parsingURL()
     }
