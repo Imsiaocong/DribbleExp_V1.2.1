@@ -16,7 +16,7 @@ class WelcomeViewController: UIViewController, UIViewControllerTransitioningDele
     
     var pageControl: GuttlerPageControl!
     private var scrollView: UIScrollView!
-    @IBOutlet weak var transitionButton: UIButton!
+    var transitionButton: UIButton!
     //@IBOutlet weak var onboarding: PaperOnboarding!
     
     override func viewDidLoad() {
@@ -24,8 +24,13 @@ class WelcomeViewController: UIViewController, UIViewControllerTransitioningDele
         let frame = self.view.bounds
         
         self.view.backgroundColor = UIColor.whiteColor()
+        self.transitionButton = UIButton()
+        self.transitionButton.frame = CGRect(x: frame.midX-42, y: self.view.frame.size.height, width: 84, height: 84)
+        self.transitionButton.addTarget(self, action: #selector(WelcomeViewController.didClick), forControlEvents: .TouchUpInside)
         self.transitionButton.layer.cornerRadius = 43
+        self.transitionButton.backgroundColor = UIColor.redColor()
         self.transitionButton.alpha = 0
+        self.view.addSubview(transitionButton)
         
         scrollView = UIScrollView(frame: frame)
         scrollView.pagingEnabled = true
@@ -75,6 +80,10 @@ class WelcomeViewController: UIViewController, UIViewControllerTransitioningDele
         let controller = segue.destinationViewController
         controller.transitioningDelegate = self
         controller.modalPresentationStyle = .Custom
+    }
+    
+    func didClick() {
+        self.performSegueWithIdentifier("ToMain", sender: self)
     }
     
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -129,10 +138,12 @@ extension WelcomeViewController {
         if currentPage == 2 {
             UIView.animateWithDuration(0.5, animations: { 
                 self.transitionButton.alpha = 1
+                self.transitionButton.frame = CGRect(x: self.view.bounds.midX-42, y: self.view.frame.size.height-200, width: 84, height: 84)
                 }, completion: nil)
         } else {
             UIView.animateWithDuration(0.2, animations: { 
                 self.transitionButton.alpha = 0
+                self.transitionButton.frame = CGRect(x: self.view.bounds.midX-42, y: self.view.frame.size.height, width: 84, height: 84)
                 }, completion: nil)
         }
     }
