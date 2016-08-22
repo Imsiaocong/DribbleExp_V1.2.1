@@ -10,23 +10,15 @@ import UIKit
 
 extension ViewController{
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        let shapeLayer = CAShapeLayer()
-        let mainPath1 = UIBezierPath()
-        let getMid = self.view.frame.size.width/2
-        //print(scrollView.contentOffset.x)
-        //pageControl.scrollWithScrollView(collectionView)
+        
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(ViewController.handlePan(_:)))
+        
         if scrollView.contentOffset.x < 0 {
-            shapeLayer.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width/2, height: self.view.frame.size.height)
-            shapeLayer.fillColor = UIColor.blueColor().CGColor
-            mainPath1.moveToPoint(CGPoint(x: 0, y: 0))
-            mainPath1.addCurveToPoint(CGPointMake(0, self.view.frame.size.height), controlPoint1: CGPointMake(getMid, 0), controlPoint2: CGPointMake(getMid*1.5, 0))
-            shapeLayer.path = mainPath1.CGPath
-            self.view.layer.insertSublayer(shapeLayer, atIndex: 0)
+            scrollView.addGestureRecognizer(panGesture)
         }
         
         if scrollView.contentOffset.x > 0 && scrollView.contentOffset.x <= 180{
             self.backgroundPic.image = UIImage(named: "0")
-            mainPath1.removeAllPoints()
         }
         if scrollView.contentOffset.x > 180 && scrollView.contentOffset.x <= 560{
             self.backgroundPic.image = UIImage(named: "1")
@@ -40,6 +32,27 @@ extension ViewController{
         if scrollView.contentOffset.x > 1310 && scrollView.contentOffset.x <= 2000{
             self.backgroundPic.image = UIImage(named: "4")
         }
+    }
+    
+    func handlePan(gesture: UIPanGestureRecognizer) {
+        let touchPoint: CGPoint = CGPointMake(gesture.locationInView(gesture.view).x, gesture.locationInView(gesture.view).y)
+        print(touchPoint)
+        
+        let shapeLayer = CAShapeLayer()
+        let mainPath1 = UIBezierPath()
+        let getMid = self.view.frame.size.width/2
+        
+        mainPath1.removeAllPoints()
+        
+        shapeLayer.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width/4, height: self.view.frame.size.height)
+        shapeLayer.fillColor = UIColor.blueColor().CGColor
+        mainPath1.moveToPoint(CGPoint(x: 0, y: 0))
+        mainPath1.addCurveToPoint(CGPointMake(0, self.view.frame.size.height), controlPoint1: CGPointMake(touchPoint.x, touchPoint.y), controlPoint2: CGPointMake(getMid, 0))
+        shapeLayer.path = mainPath1.CGPath
+        self.view.layer.insertSublayer(shapeLayer, atIndex: 0)
+        let returnAnimation: CABasicAnimation = CABasicAnimation(keyPath: "path")
+        returnAnimation.toValue = mainPath1
+        shapeLayer.addAnimation(returnAnimation, forKey: nil)
     }
     
     func addContent(state: didApear) {
