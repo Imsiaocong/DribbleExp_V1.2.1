@@ -15,6 +15,7 @@
 		013CFEF51D6227F900990A78 /* GuttlerPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CFEF11D6227F900990A78 /* GuttlerPageControl.swift */; };
 		013CFEF61D6227F900990A78 /* IndicatorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CFEF21D6227F900990A78 /* IndicatorLayer.swift */; };
 		013CFEF71D6227F900990A78 /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CFEF31D6227F900990A78 /* RandomColor.swift */; };
+		018C4A2E1D6DEEAE0074AEDC /* DetailViewController_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018C4A2D1D6DEEAE0074AEDC /* DetailViewController_2.swift */; };
 		019A4B5E1D3BCC700073277D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019A4B5D1D3BCC700073277D /* SwiftyJSON.swift */; };
 		01BBCE301D60B6E500807220 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BBCE2F1D60B6E500807220 /* WelcomeViewController.swift */; };
 		01BBCE321D60B7BA00807220 /* CustomTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BBCE311D60B7BA00807220 /* CustomTransitioning.swift */; };
@@ -72,6 +73,7 @@
 		013CFEF11D6227F900990A78 /* GuttlerPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuttlerPageControl.swift; sourceTree = "<group>"; };
 		013CFEF21D6227F900990A78 /* IndicatorLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorLayer.swift; sourceTree = "<group>"; };
 		013CFEF31D6227F900990A78 /* RandomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomColor.swift; sourceTree = "<group>"; };
+		018C4A2D1D6DEEAE0074AEDC /* DetailViewController_2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController_2.swift; sourceTree = "<group>"; };
 		019A4B5D1D3BCC700073277D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		01BBCE2F1D60B6E500807220 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		01BBCE311D60B7BA00807220 /* CustomTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTransitioning.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				01BBCE2F1D60B6E500807220 /* WelcomeViewController.swift */,
 				01C637571D293FC40044DD89 /* CollectionViewCell.swift */,
 				01C6375B1D2940C60044DD89 /* DetailViewController.swift */,
+				018C4A2D1D6DEEAE0074AEDC /* DetailViewController_2.swift */,
 				01C6372D1D293B460044DD89 /* Main.storyboard */,
 				01C637301D293B460044DD89 /* Assets.xcassets */,
 				01C637321D293B460044DD89 /* LaunchScreen.storyboard */,
@@ -498,6 +501,7 @@
 				013363151D3B7B3400346D8F /* TheSecondView.swift in Sources */,
 				019A4B5E1D3BCC700073277D /* SwiftyJSON.swift in Sources */,
 				01BBCE4C1D60C24700807220 /* PageViewItem.swift in Sources */,
+				018C4A2E1D6DEEAE0074AEDC /* DetailViewController_2.swift in Sources */,
 				010373A11D58D28900C75D1C /* ViewControllerExtension.swift in Sources */,
 				01E2FE601D65E3F300C7FC4D /* Version.swift in Sources */,
 				013CFEF61D6227F900990A78 /* IndicatorLayer.swift in Sources */,

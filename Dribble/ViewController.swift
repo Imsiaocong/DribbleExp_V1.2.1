@@ -171,29 +171,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.selectedCell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell
         self.performSegueWithIdentifier("ShowDetail", sender: nil)
         
+        if indexPath.row == 1 {
+            self.performSegueWithIdentifier("toCardView", sender: nil)
+        }
+        
         blur.effect = UIBlurEffect(style: UIBlurEffectStyle.Light)
         self.view.addSubview(blur)
     }
-    /*
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        print(scrollView.contentOffset.x)
-        if scrollView.contentOffset.x > 0 && scrollView.contentOffset.x <= 100{
-            self.backgroundPic.image = UIImage(named: "0")
-        }
-        if scrollView.contentOffset.x > 100 && scrollView.contentOffset.x <= 400{
-            self.backgroundPic.image = UIImage(named: "1")
-        }
-        if scrollView.contentOffset.x > 400 && scrollView.contentOffset.x <= 670{
-            self.backgroundPic.image = UIImage(named: "2")
-        }
-        if scrollView.contentOffset.x > 670 && scrollView.contentOffset.x <= 970{
-            self.backgroundPic.image = UIImage(named: "3")
-        }
-        if scrollView.contentOffset.x > 970 && scrollView.contentOffset.x <= 1062{
-            self.backgroundPic.image = UIImage(named: "4")
-        }
-    }
-    */
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //let snapshotView = self.view.snapshotViewAfterScreenUpdates(false)
         if segue.identifier == "ShowDetail" {
@@ -204,15 +189,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             
             if DestinationView.label.text! == "Taylor Swift" {
                 
-               DestinationView.view.backgroundColor = UIColor.clearColor()
-               DestinationView.scrollView.addSubview(DestinationView.detailView)
+                DestinationView.view.backgroundColor = UIColor.clearColor()
+                DestinationView.scrollView.addSubview(DestinationView.detailView)
                 let cus = TheSecondView(desitination: DestinationView, label: DestinationView.label, extra: DestinationView.extra)
                 cus.customizedView()
                 
             }else if DestinationView.label.text == "Albums" {
-                
-                
-                DestinationView.view.backgroundColor = UIColor.clearColor()
                 
                 
             }else if DestinationView.label.text == "Concerts" {

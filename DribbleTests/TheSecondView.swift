@@ -23,10 +23,9 @@ class TheSecondView {
     
     func customizedView() {
         self.label.text = "Taylor Swift"
-        self.extra.addSubview(ExtraViewController().view)
     }
 }
-
+/*
 class ExtraViewController: UIViewController {
     
     var imageViews: [UIImageView]!
@@ -181,3 +180,4 @@ class ExtraViewController: UIViewController {
     }
     
 }
+*/
