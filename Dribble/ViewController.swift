@@ -27,8 +27,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var replica = UIImageView()
     var blur: UIVisualEffectView!
     var blur2: UIVisualEffectView!
-    //var shapeLayer: CAShapeLayer!
-    //var path: UIBezierPath!
+    var shapeLayer: CAShapeLayer!
+    var path: UIBezierPath!
+    var v_extented: UIView!
     //var pageControl: GuttlerPageControl!
     let cellSpacing:CGFloat = 100.0
     let customAnimation = CustomTransitionAnimation()
@@ -39,7 +40,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
         
         view.center.y = 600
-        
+        v_extented = UIView()
+        v_extented = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: self.view.frame.size.height))
+        v_extented.backgroundColor = UIColor.blackColor()
+        self.view.addSubview(v_extented)
+        /*
+        self.path = UIBezierPath()
+        self.shapeLayer = CAShapeLayer()
+        self.shapeLayer.fillColor = UIColor.orangeColor().CGColor
+        self.view.layer.insertSublayer(self.shapeLayer, atIndex: 0)
+        */
         self.collectionView.frame.size.width = self.view.frame.size.width * 5
         //pageControl = GuttlerPageControl(center: self.view.center, pages: 5)
         //pageControl.bindScrollView = collectionView
