@@ -12,12 +12,13 @@ extension ViewController{
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
         let offSet_x = -scrollView.contentOffset.x
+        let v_rollSpeed: CGFloat = 0.75
         var v_width: CGFloat = 0
         v_width += offSet_x
         print(v_width)
         
         if v_width > 0 {
-         self.v_extented.frame.size.width = v_width
+         self.v_extented.frame.size.width = v_rollSpeed * v_width
         }
         
         if scrollView.contentOffset.x > 0 && scrollView.contentOffset.x <= 180{

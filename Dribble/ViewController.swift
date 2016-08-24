@@ -27,7 +27,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var replica = UIImageView()
     var blur: UIVisualEffectView!
     var blur2: UIVisualEffectView!
-    var shapeLayer: CAShapeLayer!
     var path: UIBezierPath!
     var v_extented: UIView!
     //var pageControl: GuttlerPageControl!
