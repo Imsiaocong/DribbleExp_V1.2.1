@@ -142,11 +142,11 @@
                         <viewControllerLayoutGuide type="bottom" id="iET-yL-ggJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PFX-Hz-NIm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RsA-1h-T3S">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="1500"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <connections>
                                     <outlet property="delegate" destination="iwn-94-ZPJ" id="xqt-gL-HCN"/>
                                 </connections>
@@ -161,7 +161,7 @@
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="1500"/>
+                    <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="scrollView" destination="RsA-1h-T3S" id="XYa-fP-KTU"/>
                     </connections>
