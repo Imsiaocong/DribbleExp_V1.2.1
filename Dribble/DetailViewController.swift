@@ -41,7 +41,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate, UINavigation
         self.detailImage.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
         self.scrollView.addSubview(detailImage)
         self.detailLabel.text = self.label.text
-        self.detailLabel.frame = CGRect(x: 50, y: 450, width: 200, height: 50)
+        self.detailLabel.frame = CGRect(x: 50, y: 400, width: 200, height: 50)
         self.detailLabel.textColor = UIColor.whiteColor()
         self.scrollView.addSubview(detailLabel)
         self.detailLabel.font = UIFont(name: "STHeitiTC-Light", size: 35)
@@ -77,7 +77,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate, UINavigation
             self.scrollView.addSubview(self.detailImage)
             self.scrollView.addSubview(self.detailLabel)
         }
-        if scrollView.contentOffset.y > 430 {
+        if scrollView.contentOffset.y > 400 {
             self.detailLabel.frame = CGRect(x: 50, y: scrollView.contentOffset.y + 20, width: 200, height: 50)
             //self.words.continueTyping()
             //self.scrollView.userInteractionEnabled = false

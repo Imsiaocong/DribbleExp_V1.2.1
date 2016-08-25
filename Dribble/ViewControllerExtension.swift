@@ -12,7 +12,7 @@ extension ViewController{
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
         let offSet_x = -scrollView.contentOffset.x
-        let v_rollSpeed: CGFloat = 0.75
+        let v_rollSpeed: CGFloat = 0.7
         var v_width: CGFloat = 0
         v_width += offSet_x
         print(v_width)

@@ -29,6 +29,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var blur2: UIVisualEffectView!
     var path: UIBezierPath!
     var v_extented: UIView!
+    var toNextVC: String!
     //var pageControl: GuttlerPageControl!
     let cellSpacing:CGFloat = 100.0
     let customAnimation = CustomTransitionAnimation()
@@ -43,25 +44,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         v_extented = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: self.view.frame.size.height))
         v_extented.backgroundColor = UIColor.blackColor()
         self.view.addSubview(v_extented)
-        /*
-        self.path = UIBezierPath()
-        self.shapeLayer = CAShapeLayer()
-        self.shapeLayer.fillColor = UIColor.orangeColor().CGColor
-        self.view.layer.insertSublayer(self.shapeLayer, atIndex: 0)
-        */
+
         self.collectionView.frame.size.width = self.view.frame.size.width * 5
-        //pageControl = GuttlerPageControl(center: self.view.center, pages: 5)
-        //pageControl.bindScrollView = collectionView
-        //print(self.collectionView.frame.size.width)
-        //view.addSubview(pageControl)
-        
-        //self.performSegueWithIdentifier("backToWelcomeVC", sender: nil)
-        // Do any additional setup after loading the view, typically from a nib.
+
         collectionView.dataSource = self
         collectionView.delegate   = self
         collectionView.backgroundColor = UIColor.clearColor()
-        //collectionView.pagingEnabled = true
-        //self.navigationController?.navigationBarHidden = true
+
         let ges = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.didPress))
             ges.delegate = self
         let ges2 = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.headerViewAnimation))
@@ -90,15 +79,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.didShow = false
         self.view.addSubview(headerView)
         addContent(.yes)
-        /*
-        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 6, options: .CurveEaseOut, animations: { 
-            self.headerView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
-            }) { (Bool) in
-                self.didShow = true
-        }
- */
+
         self.backgroundPic.addSubview(blur2)
-        //self.backgroundPicture()
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -133,10 +116,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
  */
     
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if operation == UINavigationControllerOperation.Push {
-            return CustomTransitionAnimation()
-        } else {
+        if operation == UINavigationControllerOperation.Push && self.toNextVC == "toCardView" {
+            toVC as! DetailViewController_2
             return nil
+        } else {
+            return CustomTransitionAnimation()
         }
     }
 
@@ -145,12 +129,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        //let shadowLayer = CAShapeLayer()
+        
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! CollectionViewCell
         cell.cellImage.image = UIImage(named: imgArray[indexPath.row])
         cell.cellLabel.text = ttlArray[indexPath.row]
         cell.cellLabel.adjustsFontSizeToFitWidth = true
-        cell.cellLabel.font = UIFont(name: "STHeitiTC-Light", size: 30)
+        cell.cellLabel.font = UIFont(name: "STHeitiTC-Light", size: 17)
         cell.layer.cornerRadius = 5
         cell.contentView.layer.borderWidth = 0.5
         cell.contentView.layer.borderColor = UIColor.clearColor().CGColor
@@ -169,10 +153,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         self.selectedCell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell
-        self.performSegueWithIdentifier("ShowDetail", sender: nil)
         
-        if indexPath.row == 1 {
-            self.performSegueWithIdentifier("toCardView", sender: nil)
+        if indexPath.row != 1 {
+            self.performSegueWithIdentifier("ShowDetail", sender: self)
+        }else{
+            self.toNextVC = "toCardView"
+            self.performSegueWithIdentifier("toCardView", sender: self)
         }
         
         blur.effect = UIBlurEffect(style: UIBlurEffectStyle.Light)
@@ -180,7 +166,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //let snapshotView = self.view.snapshotViewAfterScreenUpdates(false)
+        
         if segue.identifier == "ShowDetail" {
             let DestinationView = segue.destinationViewController as! DetailViewController
             DestinationView.image = self.selectedCell.cellImage.image
