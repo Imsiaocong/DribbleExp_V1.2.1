@@ -28,6 +28,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var blur: UIVisualEffectView!
     var blur2: UIVisualEffectView!
     var path: UIBezierPath!
+    var shapeLayer: CAShapeLayer!
     var v_extented: UIView!
     var toNextVC: String!
     //var pageControl: GuttlerPageControl!
@@ -39,11 +40,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.path = UIBezierPath()
+        
+        self.shapeLayer = CAShapeLayer()
+        self.shapeLayer.fillColor = UIColor.orangeColor().CGColor
+        self.view.layer.insertSublayer(self.shapeLayer, atIndex: 0)
+        
         view.center.y = 600
-        v_extented = UIView()
-        v_extented = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: self.view.frame.size.height))
-        v_extented.backgroundColor = UIColor.blackColor()
-        self.view.addSubview(v_extented)
+        //v_extented = UIView()
+        //v_extented = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: self.view.frame.size.height))
+        //v_extented.backgroundColor = UIColor.blackColor()
+        //self.view.addSubview(v_extented)
 
         self.collectionView.frame.size.width = self.view.frame.size.width * 5
 

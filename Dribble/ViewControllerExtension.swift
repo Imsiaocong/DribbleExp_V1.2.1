@@ -12,13 +12,25 @@ extension ViewController{
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
         let offSet_x = -scrollView.contentOffset.x
-        let v_rollSpeed: CGFloat = 0.7
+        let h = self.view.frame.size.height
+        let v_rollSpeed: CGFloat = 1.5
         var v_width: CGFloat = 0
         v_width += offSet_x
-        print(v_width)
         
         if v_width > 0 {
-         self.v_extented.frame.size.width = v_rollSpeed * v_width
+            let progress = v_width/100
+            
+            if progress > 0.8 {
+                exp()
+            }
+            
+            self.path.removeAllPoints()
+            self.path.moveToPoint(CGPointZero)
+            
+            self.path.addCurveToPoint(CGPointMake(0, h), controlPoint1: CGPointMake(v_width * v_rollSpeed, h/2), controlPoint2: CGPointMake(0, h))
+            self.path.addCurveToPoint(CGPointMake(0, 0), controlPoint1: CGPointMake(0, h/2), controlPoint2: CGPointMake(0, h))
+            self.path.closePath()
+            self.shapeLayer.path = self.path.CGPath
         }
         
         if scrollView.contentOffset.x > 0 && scrollView.contentOffset.x <= 180{
@@ -58,6 +70,10 @@ extension ViewController{
         case .iPhone6SPlus, .iPhone6Plus: return 150
         default: return 110
         }
+    }
+    
+    func exp() {
+        print("function called.")
     }
     
 }
