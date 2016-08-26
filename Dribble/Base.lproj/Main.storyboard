@@ -128,11 +128,30 @@
                         <outlet property="collectionView" destination="xXB-Q4-kxc" id="ppr-dL-QN3"/>
                         <segue destination="iwn-94-ZPJ" kind="show" identifier="ShowDetail" id="EIP-dq-yKJ"/>
                         <segue destination="vp7-ZW-LLv" kind="show" identifier="toCardView" id="rgm-Js-G9W"/>
+                        <segue destination="Orv-L4-fcY" kind="show" identifier="EasternEgg" id="Y4c-WI-aBa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BMp-0L-cvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2974" y="394"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="asO-Az-JRf">
+            <objects>
+                <viewController id="Orv-L4-fcY" customClass="GameViewController" customModule="Dribble" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kJq-Eo-o9Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="l8o-9F-vIF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Fy-aC-cnF" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="axx-iT-mFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2974" y="-333"/>
         </scene>
         <!--Detail View Controller2-->
         <scene sceneID="M2x-Sy-UQy">

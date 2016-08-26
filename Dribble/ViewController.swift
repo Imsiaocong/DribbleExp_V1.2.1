@@ -126,6 +126,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if operation == UINavigationControllerOperation.Push && self.toNextVC == "toCardView" {
             toVC as! DetailViewController_2
             return nil
+        } else if operation == UINavigationControllerOperation.Push && self.toNextVC == "EasternEgg" {
+            return nil
         } else {
             return CustomTransitionAnimation()
         }

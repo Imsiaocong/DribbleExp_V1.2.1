@@ -21,7 +21,8 @@ extension ViewController{
             let progress = v_width/100
             
             if progress > 0.8 {
-                exp()
+                self.toNextVC = "EasternEgg"
+                self.performSegueWithIdentifier("EasternEgg", sender: self)
             }
             
             self.path.removeAllPoints()
@@ -70,10 +71,6 @@ extension ViewController{
         case .iPhone6SPlus, .iPhone6Plus: return 150
         default: return 110
         }
-    }
-    
-    func exp() {
-        print("function called.")
     }
     
 }
