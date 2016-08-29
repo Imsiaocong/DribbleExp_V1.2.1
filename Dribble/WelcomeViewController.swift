@@ -13,6 +13,7 @@ class WelcomeViewController: UIViewController, UIViewControllerTransitioningDele
     //var swipe: UISwipeGestureRecognizer!
     let transition = BubbleTransition()
     let pageNumberCount = 3
+    @IBOutlet weak var expButton: UIButton!
     
     var pageControl: GuttlerPageControl!
     private var scrollView: UIScrollView!
@@ -21,6 +22,11 @@ class WelcomeViewController: UIViewController, UIViewControllerTransitioningDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if traitCollection.forceTouchCapability == .Available {
+            registerForPreviewingWithDelegate(self, sourceView: view)
+        }
+        
         let frame = self.view.bounds
         
         self.view.backgroundColor = UIColor.whiteColor()
@@ -56,17 +62,6 @@ class WelcomeViewController: UIViewController, UIViewControllerTransitioningDele
         pageControl.bindScrollView = scrollView
         view.addSubview(pageControl)
 
-        
-        //onboarding = PaperOnboarding(itemsCount: 3)
-        //onboarding.dataSource = self
-        //onboarding.translatesAutoresizingMaskIntoConstraints = false
-        //view.addSubview(onboarding)
-        /*
-        for attribute: NSLayoutAttribute in [.Left, .Right, . Top, .Bottom] {
-            let constraint = NSLayoutConstraint(item: onboarding, attribute: attribute, relatedBy: .Equal, toItem: view, attribute: attribute, multiplier: 1, constant: 0)
-            view.addConstraint(constraint)
-        }
- */
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -107,24 +102,7 @@ class WelcomeViewController: UIViewController, UIViewControllerTransitioningDele
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return .Portrait
     }
-    /*
-    func swiped() {
-        print("Swiped")
-        self.navigationController?.popViewControllerAnimated(true)
-        self.performSegueWithIdentifier("Welcome", sender: nil)
-    }
- */
-    /*
-    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if operation == UINavigationControllerOperation.Push {
-            print("Success")
-            return CustomTransitioning()
-        } else {
-            print("Fail")
-            return nil
-        }
-    }
-    */
+
 }
 
 extension WelcomeViewController {
@@ -146,5 +124,15 @@ extension WelcomeViewController {
                 self.transitionButton.frame = CGRect(x: self.view.bounds.midX-42, y: self.view.frame.size.height, width: 84, height: 84)
                 }, completion: nil)
         }
+    }
+}
+
+extension WelcomeViewController: UIViewControllerPreviewingDelegate {
+    func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        return CGRectContainsPoint(transitionButton.frame, location) ? ViewController() : nil
+    }
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
+        showViewController(viewControllerToCommit, sender: self)
     }
 }
