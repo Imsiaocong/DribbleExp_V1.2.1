@@ -31,6 +31,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var shapeLayer: CAShapeLayer!
     var v_extented: UIView!
     var toNextVC: String!
+    var isTheFirstTime = true
     //var pageControl: GuttlerPageControl!
     let cellSpacing:CGFloat = 100.0
     let customAnimation = CustomTransitionAnimation()
@@ -89,6 +90,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
         self.backgroundPic.addSubview(blur2)
         
+        let welcomeVC = storyboard!.instantiateViewControllerWithIdentifier("welcome-vc")
+        
+        if isTheFirstTime == true {
+        self.presentViewController(welcomeVC, animated: true, completion: nil)
+            isTheFirstTime = false
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
