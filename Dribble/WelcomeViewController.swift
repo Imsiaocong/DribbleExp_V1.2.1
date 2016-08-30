@@ -12,6 +12,7 @@ class WelcomeViewController: UIViewController, UIViewControllerTransitioningDele
     
     //var swipe: UISwipeGestureRecognizer!
     let transition = BubbleTransition()
+    let target = ViewController()
     let pageNumberCount = 3
     @IBOutlet weak var expButton: UIButton!
     
@@ -105,6 +106,7 @@ class WelcomeViewController: UIViewController, UIViewControllerTransitioningDele
 
 }
 
+//Set Up Page Controll.
 extension WelcomeViewController {
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
@@ -127,6 +129,7 @@ extension WelcomeViewController {
     }
 }
 
+//Set Up 3D Touch Support.
 extension WelcomeViewController: UIViewControllerPreviewingDelegate {
     func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         return CGRectContainsPoint(transitionButton.frame, location) ? ViewController() : nil

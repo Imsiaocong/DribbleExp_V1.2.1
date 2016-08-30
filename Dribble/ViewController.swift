@@ -13,7 +13,9 @@ enum didApear {
     case no
 }
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate, UICollectionViewDelegateFlowLayout {
+var isFirstTime = true
+
+final class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var weatherImg: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -31,8 +33,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var shapeLayer: CAShapeLayer!
     var v_extented: UIView!
     var toNextVC: String!
-    var isTheFirstTime = true
-    //var pageControl: GuttlerPageControl!
+    
     let cellSpacing:CGFloat = 100.0
     let customAnimation = CustomTransitionAnimation()
     let imgArray = ["0","1","2","3","4"]
@@ -48,10 +49,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         self.view.layer.insertSublayer(self.shapeLayer, atIndex: 0)
         
         view.center.y = 600
-        //v_extented = UIView()
-        //v_extented = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: self.view.frame.size.height))
-        //v_extented.backgroundColor = UIColor.blackColor()
-        //self.view.addSubview(v_extented)
 
         self.collectionView.frame.size.width = self.view.frame.size.width * 5
 
@@ -90,12 +87,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
         self.backgroundPic.addSubview(blur2)
         
-        let welcomeVC = storyboard!.instantiateViewControllerWithIdentifier("welcome-vc")
-        
-        if isTheFirstTime == true {
-        self.presentViewController(welcomeVC, animated: true, completion: nil)
-            isTheFirstTime = false
+        if isFirstTime {
+            let welcomeVC = storyboard!.instantiateViewControllerWithIdentifier("welcome-vc")
+            self.presentViewController(welcomeVC, animated: true, completion: nil)
+            isFirstTime = false
         }
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -112,6 +109,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
     /*
     func parsingURL() {
         let url = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?q=Zhoushan&APPID=06ddf21c52f06e793a7fdcd658c4d998")
