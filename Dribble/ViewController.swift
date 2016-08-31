@@ -87,16 +87,16 @@ final class ViewController: UIViewController, UICollectionViewDataSource, UIColl
 
         self.backgroundPic.addSubview(blur2)
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
         if isFirstTime {
             let welcomeVC = storyboard!.instantiateViewControllerWithIdentifier("welcome-vc")
             self.presentViewController(welcomeVC, animated: true, completion: nil)
             isFirstTime = false
         }
-        
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
         
         self.navigationController?.delegate = self
     }
