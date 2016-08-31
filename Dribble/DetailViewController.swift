@@ -77,7 +77,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate, UINavigation
             self.scrollView.addSubview(self.detailImage)
             self.scrollView.addSubview(self.detailLabel)
         }
-        if scrollView.contentOffset.y > 400 {
+        if scrollView.contentOffset.y > 380 {
             self.detailLabel.frame = CGRect(x: 50, y: scrollView.contentOffset.y + 20, width: 200, height: 50)
             //self.words.continueTyping()
             //self.scrollView.userInteractionEnabled = false
