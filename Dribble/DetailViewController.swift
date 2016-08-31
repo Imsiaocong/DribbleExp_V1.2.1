@@ -17,13 +17,12 @@ class DetailViewController: UIViewController, UIScrollViewDelegate, UINavigation
     var detailView: UIView!
     var detailImage = UIImageView()
     var detailLabel = UILabel()
-    //var words = CLTypingLabel()
     var extra: UIView!
-    //@IBOutlet weak var detailView: UIView!
     var image: UIImage!
     var label: UILabel!
     var picLayer: CAShapeLayer!
     var model: AnyObject!
+    var textView: UITextView!
     let offSet = CGPoint(x: 0, y: 600)
     let targetView = ViewController()
     private var percentDrivenTransition: UIPercentDrivenInteractiveTransition?
@@ -31,9 +30,11 @@ class DetailViewController: UIViewController, UIScrollViewDelegate, UINavigation
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.words.text = "> I Want To Attend WWDC 2017."
-        //self.words.pauseTyping()
-        //self.extra = words
+        
+        self.textView = UITextView()
+        self.textView.frame = CGRect(x: 0, y: 450, width: 200, height: 200)
+        self.textView.text = "This is an example."
+        
         self.extra = UIView()
         self.detailView = UIView()
         self.detailView.frame = CGRect(x: 0, y: 700, width: self.view.frame.size.width, height: 800)
@@ -49,6 +50,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate, UINavigation
         self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: 2*self.view.frame.size.height)
         self.detailView.userInteractionEnabled = true
         self.scrollView.bounces = false
+        
         //self.drawRact()
         //WeatherInfo().parsingURL()
     }
@@ -76,9 +78,11 @@ class DetailViewController: UIViewController, UIScrollViewDelegate, UINavigation
         }else if scrollView.contentOffset.y < 300 {
             self.scrollView.addSubview(self.detailImage)
             self.scrollView.addSubview(self.detailLabel)
+            self.textView.removeFromSuperview()
         }
         if scrollView.contentOffset.y > 380 {
             self.detailLabel.frame = CGRect(x: 50, y: scrollView.contentOffset.y + 20, width: 200, height: 50)
+            self.scrollView.addSubview(textView)
             //self.words.continueTyping()
             //self.scrollView.userInteractionEnabled = false
         }
