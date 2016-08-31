@@ -11,8 +11,13 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var quit: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        quit.addTarget(self, action: #selector(GameViewController.quitGame), forControlEvents: .TouchUpInside)
+        
         let scene = GameScene(size: view.bounds.size)
         let skView = view as! SKView
         skView.showsFPS = true
@@ -24,5 +29,9 @@ class GameViewController: UIViewController {
     
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    func quitGame() {
+        performSegueWithIdentifier("back", sender: nil)
     }
 }

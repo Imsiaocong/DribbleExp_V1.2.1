@@ -13,7 +13,9 @@ class DetailViewController_2: UIViewController {
         var imageViews: [UIImageView]!
         var resueArray: [UIImageView]!
         var maxLength: CGFloat!
-        
+    
+        @IBOutlet weak var quit: UIButton!
+    
         override func viewDidLoad() {
             super.viewDidLoad()
             // Do any additional setup after loading the view, typically from a nib.
@@ -21,12 +23,20 @@ class DetailViewController_2: UIViewController {
             self.resueArray = [UIImageView]()
             createImageViews(5)
             self.maxLength = self.view.bounds.width * 0.5
+            
+            quit.addTarget(self, action: #selector(DetailViewController_2.quitScene), forControlEvents: .TouchUpInside)
         }
         
         override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
             // Dispose of any resources that can be recreated.
         }
+    
+    func quitScene() {
+        let viewController = storyboard?.instantiateViewControllerWithIdentifier("MainView")
+        self.presentViewController(viewController!, animated: true, completion: nil)
+    }
+    
         //STEP1: APPEND IMAGES TO OUR ARRAY
         func createImageViews(count: Int) {
             for index in 0..<count {

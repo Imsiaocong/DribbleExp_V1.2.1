@@ -31,7 +31,7 @@
         <!--View Controller-->
         <scene sceneID="bav-Cs-lbh">
             <objects>
-                <viewController id="Ta0-LD-AOK" customClass="ViewController" customModule="Dribble" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainView" id="Ta0-LD-AOK" customClass="ViewController" customModule="Dribble" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uPI-6m-Bwm"/>
                         <viewControllerLayoutGuide type="bottom" id="sCM-Z2-iH5"/>
@@ -146,12 +146,35 @@
                     <view key="view" contentMode="scaleToFill" id="1Fy-aC-cnF" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2px-2K-4nT">
+                                <rect key="frame" x="28" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="8d9-OD-ZX1"/>
+                                    <constraint firstAttribute="height" constant="30" id="Nbm-pH-NY0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Ta0-LD-AOK" kind="show" identifier="back" id="DFS-7g-cpK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2px-2K-4nT" firstAttribute="leading" secondItem="1Fy-aC-cnF" secondAttribute="leading" constant="28" id="Ae6-gn-8nt"/>
+                            <constraint firstItem="2px-2K-4nT" firstAttribute="top" secondItem="kJq-Eo-o9Y" secondAttribute="bottom" id="Ygk-Fw-Vme"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="quit" destination="2px-2K-4nT" id="39W-Pn-8Po"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axx-iT-mFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2974" y="-333"/>
+            <point key="canvasLocation" x="3674" y="394"/>
         </scene>
         <!--Detail View Controller2-->
         <scene sceneID="M2x-Sy-UQy">
@@ -164,8 +187,28 @@
                     <view key="view" contentMode="scaleToFill" id="Llw-ct-mAU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KO0-Le-OdI">
+                                <rect key="frame" x="28" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="3D7-q2-Jzi"/>
+                                    <constraint firstAttribute="height" constant="30" id="zJ8-TN-FqN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KO0-Le-OdI" firstAttribute="top" secondItem="YGG-n7-Crr" secondAttribute="bottom" id="Nqt-CX-O2Z"/>
+                            <constraint firstItem="KO0-Le-OdI" firstAttribute="leading" secondItem="Llw-ct-mAU" secondAttribute="leading" constant="28" id="OPc-Uf-Fcc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="quit" destination="KO0-Le-OdI" id="Eun-dZ-3wv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xak-cr-C1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -231,4 +274,7 @@
     <resources>
         <image name="0" width="750" height="1334"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="DFS-7g-cpK"/>
+    </inferredMetricsTieBreakers>
 </document>
