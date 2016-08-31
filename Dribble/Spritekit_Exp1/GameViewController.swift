@@ -9,14 +9,14 @@
 import UIKit
 import SpriteKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet weak var quit: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        quit.addTarget(self, action: #selector(GameViewController.quitGame), forControlEvents: .TouchUpInside)
+        quit.addTarget(self, action: Selector("navigationController"), forControlEvents: .TouchUpInside)
         
         let scene = GameScene(size: view.bounds.size)
         let skView = view as! SKView
@@ -31,7 +31,12 @@ class GameViewController: UIViewController {
         return true
     }
     
-    func quitGame() {
-        performSegueWithIdentifier("back", sender: nil)
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if operation == UINavigationControllerOperation.Pop {
+            return GameViewTransition()
+        } else {
+            return nil
+        }
     }
+    
 }

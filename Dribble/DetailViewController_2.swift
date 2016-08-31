@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController_2: UIViewController {
+class DetailViewController_2: UIViewController, UINavigationControllerDelegate{
         
         var imageViews: [UIImageView]!
         var resueArray: [UIImageView]!
@@ -24,18 +24,13 @@ class DetailViewController_2: UIViewController {
             createImageViews(5)
             self.maxLength = self.view.bounds.width * 0.5
             
-            quit.addTarget(self, action: #selector(DetailViewController_2.quitScene), forControlEvents: .TouchUpInside)
+            quit.addTarget(self, action: #selector(DetailViewController_2.navigationController), forControlEvents: .TouchUpInside)
         }
         
         override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
             // Dispose of any resources that can be recreated.
         }
-    
-    func quitScene() {
-        let viewController = storyboard?.instantiateViewControllerWithIdentifier("MainView")
-        self.presentViewController(viewController!, animated: true, completion: nil)
-    }
     
         //STEP1: APPEND IMAGES TO OUR ARRAY
         func createImageViews(count: Int) {
@@ -170,5 +165,13 @@ class DetailViewController_2: UIViewController {
             self.view.insertSubview(imageView, atIndex: 1)
             self.imageViews.append(imageView)
         }
+    
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if operation == UINavigationControllerOperation.Pop {
+            return D2Transition()
+        } else {
+            return nil
+        }
+    }
         
 }

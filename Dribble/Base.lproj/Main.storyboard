@@ -158,7 +158,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ta0-LD-AOK" kind="show" identifier="back" id="DFS-7g-cpK"/>
+                                    <segue destination="Ta0-LD-AOK" kind="show" identifier="back" id="XrQ-1t-crN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -174,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axx-iT-mFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3674" y="394"/>
+            <point key="canvasLocation" x="3757" y="394"/>
         </scene>
         <!--Detail View Controller2-->
         <scene sceneID="M2x-Sy-UQy">
@@ -198,6 +198,9 @@
                                 <state key="normal" title="X">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Ta0-LD-AOK" kind="show" identifier="back2" id="iaW-gF-xra"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -275,6 +278,6 @@
         <image name="0" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DFS-7g-cpK"/>
+        <segue reference="iaW-gF-xra"/>
     </inferredMetricsTieBreakers>
 </document>

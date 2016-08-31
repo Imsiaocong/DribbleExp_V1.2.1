@@ -129,7 +129,6 @@ final class ViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         if operation == UINavigationControllerOperation.Push && self.toNextVC == "toCardView" {
-            toVC as! DetailViewController_2
             return nil
         } else if operation == UINavigationControllerOperation.Push && self.toNextVC == "EasternEgg" {
             return nil
