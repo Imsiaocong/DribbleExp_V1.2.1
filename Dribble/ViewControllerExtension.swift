@@ -11,6 +11,12 @@ import UIKit
 extension ViewController{
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
+        let offset_x = collectionView.contentSize.width / 5
+        
+        let row = scrollView.contentOffset.x / offset_x
+        
+        print(Double(row))
+        
         let offSet_x = -scrollView.contentOffset.x
         let h = self.view.frame.size.height
         let v_rollSpeed: CGFloat = 1.5
@@ -34,15 +40,15 @@ extension ViewController{
             self.shapeLayer.path = self.path.CGPath
         }
         
-        if scrollView.contentOffset.x > 0 && scrollView.contentOffset.x <= 180{
+        if Double(row) >= 0 && Double(row) < 0.5{
             self.backgroundPic.image = UIImage(named: "0")
-        }else if scrollView.contentOffset.x > 180 && scrollView.contentOffset.x <= 560{
+        }else if Double(row) >= 0.5 && Double(row) < 1.5{
             self.backgroundPic.image = UIImage(named: "1")
-        }else if scrollView.contentOffset.x > 560 && scrollView.contentOffset.x <= 935{
+        }else if Double(row) >= 1.5 && Double(row) < 2.5{
             self.backgroundPic.image = UIImage(named: "2")
-        }else if scrollView.contentOffset.x > 935 && scrollView.contentOffset.x <= 1310{
+        }else if Double(row) >= 2.5 && Double(row) < 3.5{
             self.backgroundPic.image = UIImage(named: "3")
-        }else if scrollView.contentOffset.x > 1310 && scrollView.contentOffset.x <= 2000{
+        }else if Double(row) >= 3.5 && Double(row) < 4.5{
             self.backgroundPic.image = UIImage(named: "4")
         }
     }
@@ -69,7 +75,7 @@ extension ViewController{
         case .iPhone5S, .iPhone5: return 55
         case .iPhone6S, .iPhone6: return 110
         case .iPhone6SPlus, .iPhone6Plus: return 150
-        default: return 55
+        default: return 110
         }
     }
     
