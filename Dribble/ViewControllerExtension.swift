@@ -75,7 +75,7 @@ extension ViewController{
         case .iPhone5S, .iPhone5: return 55
         case .iPhone6S, .iPhone6: return 110
         case .iPhone6SPlus, .iPhone6Plus: return 150
-        default: return 110
+        default: return 55
         }
     }
     
