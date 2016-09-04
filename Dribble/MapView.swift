@@ -46,7 +46,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
 
     func annoted() {
-        annotation.coordinate = CLLocation(latitude: 32.029171, longitude: 118.788231).coordinate
+        annotation.coordinate = CLLocation(latitude: 112.112443, longitude: 30.019562).coordinate
         annotation.title = "My Location"
         self.map.addAnnotation(annotation)
     }
