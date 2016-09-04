@@ -23,17 +23,18 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         map.mapType = .Hybrid
         
         //创建一个MKCoordinateSpan对象，设置地图的范围（越小越精确）
-        let latDelta = 0.001
-        let longDelta = 0.001
+        let latDelta = 0.01
+        let longDelta = 0.01
         let currentLocationSpan:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, longDelta)
         
         //定义地图区域和中心坐标（
         //使用当前位置
         //var center:CLLocation = locationManager.location.coordinate
         //使用自定义位置
-        let center:CLLocation = CLLocation(latitude: 32.029171, longitude: 118.788231)
+        let center:CLLocation = CLLocation(latitude: 30.000792, longitude: 122.20884)
         let currentRegion:MKCoordinateRegion = MKCoordinateRegion(center: center.coordinate,
                                                                   span: currentLocationSpan)
+        
         
         //设置显示区域
         self.map.setRegion(currentRegion, animated: true)
@@ -46,7 +47,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
 
     func annoted() {
-        annotation.coordinate = CLLocation(latitude: 112.112443, longitude: 30.019562).coordinate
+        annotation.coordinate = CLLocation(latitude: 30.000792, longitude: 122.20884).coordinate
         annotation.title = "My Location"
         self.map.addAnnotation(annotation)
     }
