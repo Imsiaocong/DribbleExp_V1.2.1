@@ -132,7 +132,10 @@ final class ViewController: UIViewController, UICollectionViewDataSource, UIColl
             return nil
         } else if operation == UINavigationControllerOperation.Push && self.toNextVC == "EasternEgg" {
             return nil
-        } else {
+        }else if operation == UINavigationControllerOperation.Push && self.toNextVC == "toMapView" {
+            return nil
+        }
+        else {
             return CustomTransitionAnimation()
         }
     }
@@ -167,11 +170,14 @@ final class ViewController: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         self.selectedCell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell
         
-        if indexPath.row != 1 {
+        if indexPath.row == 2 || indexPath.row == 3 || indexPath.row == 4{
             self.performSegueWithIdentifier("ShowDetail", sender: self)
-        }else{
+        }else if indexPath.row == 1{
             self.toNextVC = "toCardView"
             self.performSegueWithIdentifier("toCardView", sender: self)
+        }else if indexPath.row == 0 {
+            self.toNextVC = "toMapView"
+            self.performSegueWithIdentifier("toMapView", sender: self)
         }
         
         blur.effect = UIBlurEffect(style: UIBlurEffectStyle.Light)
